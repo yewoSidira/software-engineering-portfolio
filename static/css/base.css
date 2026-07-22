@@ -1,0 +1,95 @@
+/* ==========================================
+   ROOT VARIABLES
+========================================== */
+
+:root {
+
+    --bg-primary: #08090d;
+    --bg-secondary: #0d1117;
+    --surface-color: rgba(255,255,255,0.04);
+
+    --text-primary: #f5f7fa;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+
+    --accent: #38bdf8;
+    --accent-soft: rgba(56,189,248,.15);
+
+    --border-color: rgba(255,255,255,.08);
+
+    --radius: 16px;
+
+    --shadow:
+        0 20px 60px rgba(0,0,0,.35);
+
+}
+
+
+*,
+*::before,
+*::after {
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html {
+
+    scroll-behavior:smooth;
+
+}
+
+
+body {
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(56,189,248,.08),
+            transparent 35%
+        ),
+        var(--bg-primary);
+
+    color:var(--text-primary);
+
+    font-family:
+        "Inter",
+        sans-serif;
+
+    line-height:1.6;
+
+}
+
+
+a {
+
+    color:inherit;
+
+}
+
+
+img {
+
+    max-width:100%;
+
+}
+
+html,
+body {
+
+    width:100%;
+
+    overflow-x:hidden;
+
+}
+
+section {
+
+    scroll-margin-top:100px;
+
+}

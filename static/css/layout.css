@@ -1,0 +1,59 @@
+/* ==========================================
+   LAYOUT
+========================================== */
+
+
+.container {
+
+    width:min(1200px, 90%);
+    margin:0 auto;
+
+}
+
+
+.section {
+
+    padding:
+        7rem 0;
+
+}
+
+
+/* Grid Utilities */
+
+.grid {
+
+    display:grid;
+
+}
+
+
+.flex {
+
+    display:flex;
+
+}
+
+
+/* Page spacing */
+
+main {
+
+    overflow:hidden;
+
+}
+
+.section {
+
+    border-top:
+        1px solid var(--border-color);
+
+}
+
+
+.hero {
+
+    border-bottom:
+        1px solid var(--border-color);
+
+}

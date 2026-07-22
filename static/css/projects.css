@@ -1,0 +1,431 @@
+/* ==========================================
+   PROJECTS
+========================================== */
+
+
+.projects,
+.section {
+
+    padding:7rem 0;
+
+}
+
+
+
+/* ==========================================
+   PROJECT GRID
+========================================== */
+
+
+.project-grid {
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:2rem;
+
+}
+
+
+
+/* ==========================================
+   PROJECT CARD
+========================================== */
+
+
+.project-card {
+
+    padding:2rem;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease;
+
+}
+
+
+
+.project-card::before {
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(56,189,248,.08),
+            transparent 40%
+        );
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+
+
+.project-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(56,189,248,.4);
+
+}
+
+
+
+.project-card:hover::before {
+
+    opacity:1;
+
+}
+
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+
+.project-header {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    margin-bottom:1rem;
+
+}
+
+
+
+.project-title {
+
+    font-size:1.4rem;
+
+    letter-spacing:-.03em;
+
+}
+
+
+
+.project-status {
+
+    color:
+        var(--accent);
+
+    font-size:.75rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:.1em;
+
+    font-weight:600;
+
+}
+
+
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+
+
+.project-description {
+
+    color:
+        var(--text-secondary);
+
+    line-height:1.8;
+
+}
+
+
+
+/* ==========================================
+   ROLE
+========================================== */
+
+
+.project-role {
+
+    padding:1rem 0;
+
+    border-top:
+        1px solid var(--border-color);
+
+    border-bottom:
+        1px solid var(--border-color);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.5rem;
+
+}
+
+
+
+.project-role strong {
+
+    font-size:.9rem;
+
+}
+
+
+
+.project-role span {
+
+    color:
+        var(--text-secondary);
+
+}
+
+
+
+/* ==========================================
+   STACK
+========================================== */
+
+
+.project-stack {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:.7rem;
+
+}
+
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+
+.project-footer {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:auto;
+
+    padding-top:1.5rem;
+
+}
+
+
+
+.project-footer span {
+
+    color:
+        var(--text-muted);
+
+    font-size:.85rem;
+
+}
+
+
+
+/* ==========================================
+   CASE STUDY
+========================================== */
+
+
+.case-study {
+
+    display:grid;
+
+    grid-template-columns:
+        2fr
+        1fr;
+
+    gap:3rem;
+
+}
+
+
+
+.case-content {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2rem;
+
+}
+
+
+
+.project-sidebar {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2rem;
+
+}
+
+
+
+/* ==========================================
+   ARCHITECTURE DIAGRAM
+========================================== */
+
+
+.architecture {
+
+    margin-top:2rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:1rem;
+
+}
+
+
+
+.architecture > div {
+
+    padding:
+        .9rem
+        1.5rem;
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius:12px;
+
+    background:
+        rgba(255,255,255,.03);
+
+}
+
+
+
+.architecture-row {
+
+    display:flex;
+
+    gap:1rem;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+
+
+.architecture span {
+
+    color:
+        var(--accent);
+
+}
+
+
+
+/* ==========================================
+   LIST
+========================================== */
+
+
+.decision-list {
+
+    color:
+        var(--text-secondary);
+
+    padding-left:1.5rem;
+
+}
+
+
+
+.decision-list li {
+
+    margin-bottom:.8rem;
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+
+@media(max-width:900px){
+
+
+    .project-grid {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .case-study {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+}
+
+.hero-actions {
+
+    display:flex;
+
+    gap:1rem;
+
+    flex-wrap:wrap;
+
+}
+
+
+@media(max-width:600px){
+
+    .hero-actions {
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+
+    .hero-actions a {
+
+        width:100%;
+
+    }
+
+}

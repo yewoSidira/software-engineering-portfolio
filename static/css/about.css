@@ -1,0 +1,116 @@
+/* ==========================================
+   ABOUT
+========================================== */
+
+
+.about {
+
+    padding:7rem 0;
+
+}
+
+
+
+.about-grid {
+
+    display:grid;
+
+    grid-template-columns:
+        1.3fr
+        .7fr;
+
+    gap:4rem;
+
+    align-items:start;
+
+}
+
+
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+
+.about-content {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:1.5rem;
+
+}
+
+
+
+.about-content p {
+
+    color:
+        var(--text-secondary);
+
+    font-size:1.05rem;
+
+    line-height:1.9;
+
+}
+
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+
+.about-card {
+
+    padding:2rem;
+
+    position:sticky;
+
+    top:120px;
+
+}
+
+
+
+.about-card h3 {
+
+    margin-bottom:1.5rem;
+
+    font-size:1.2rem;
+
+}
+
+
+
+.about-card .project-stack {
+
+    gap:.8rem;
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+
+@media(max-width:900px){
+
+
+    .about-grid {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .about-card {
+
+        position:static;
+
+    }
+
+}

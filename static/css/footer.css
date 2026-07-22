@@ -1,0 +1,155 @@
+/* ==========================================
+   FOOTER
+========================================== */
+
+
+.footer {
+
+    padding:
+        4rem 0
+        2rem;
+
+    border-top:
+        1px solid var(--border-color);
+
+    background:
+        rgba(255,255,255,.015);
+
+}
+
+
+
+/* ==========================================
+   FOOTER CONTENT
+========================================== */
+
+
+.footer-content {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:3rem;
+
+}
+
+
+
+.footer-brand {
+
+    max-width:350px;
+
+}
+
+
+
+.footer-brand h3 {
+
+    font-size:1.3rem;
+
+    margin-bottom:.75rem;
+
+    letter-spacing:-.03em;
+
+}
+
+
+
+.footer-brand p {
+
+    color:
+        var(--text-secondary);
+
+    line-height:1.7;
+
+}
+
+
+
+/* ==========================================
+   LINKS
+========================================== */
+
+
+.footer-links {
+
+    display:flex;
+
+    gap:1.5rem;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.footer-links a {
+
+    color:
+        var(--text-secondary);
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+
+
+.footer-links a:hover {
+
+    color:
+        var(--accent);
+
+}
+
+
+
+/* ==========================================
+   BOTTOM
+========================================== */
+
+
+.footer-bottom {
+
+    margin-top:3rem;
+
+    padding-top:1.5rem;
+
+    border-top:
+        1px solid var(--border-color);
+
+}
+
+
+
+.footer-bottom p {
+
+    color:
+        var(--text-muted);
+
+    font-size:.9rem;
+
+}
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+
+@media(max-width:768px){
+
+
+    .footer-content {
+
+        flex-direction:column;
+
+    }
+
+
+}

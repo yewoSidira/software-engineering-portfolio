@@ -1,0 +1,221 @@
+/* ==========================================
+   COMPONENTS
+========================================== */
+
+
+/* Cards */
+
+.card {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.02)
+        );
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius:
+        var(--radius);
+
+    backdrop-filter:
+        blur(12px);
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+
+/* Section */
+
+.section-header {
+
+    max-width:700px;
+    margin-bottom:3rem;
+
+}
+
+
+.section-tag {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:.5rem;
+
+    padding:
+        .45rem
+        .9rem;
+
+
+    border-radius:999px;
+
+
+    background:
+
+        rgba(56,189,248,.08);
+
+
+    border:
+
+        1px solid rgba(56,189,248,.25);
+
+
+    color:
+
+        var(--accent);
+
+
+    font-size:.75rem;
+
+
+    font-weight:700;
+
+
+    letter-spacing:.12em;
+
+
+    text-transform:uppercase;
+
+
+}
+
+
+.section-title {
+
+    font-size:
+        clamp(2rem,5vw,3rem);
+
+    margin-top:1rem;
+
+    letter-spacing:-.04em;
+
+}
+
+
+
+/* Badges */
+
+.badge {
+
+    display:inline-flex;
+
+    align-items:center;
+
+
+    padding:
+
+        .45rem
+        1rem;
+
+
+    border-radius:
+
+        999px;
+
+
+    background:
+
+        rgba(255,255,255,.05);
+
+
+    border:
+
+        1px solid rgba(255,255,255,.1);
+
+
+    color:
+
+        var(--text-secondary);
+
+
+    font-size:.85rem;
+
+
+    font-weight:500;
+
+
+    transition:.25s ease;
+
+}
+
+
+.badge:hover {
+
+    background:
+
+        rgba(56,189,248,.1);
+
+
+    border-color:
+
+        rgba(56,189,248,.4);
+
+
+    color:
+
+        var(--text-primary);
+
+
+}
+
+
+/* Buttons */
+
+.primary-btn,
+.secondary-btn {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:
+        .8rem
+        1.5rem;
+
+    border-radius:
+        10px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+
+.primary-btn {
+
+    background:
+        var(--accent);
+
+    color:#020617;
+
+}
+
+
+.secondary-btn {
+
+    border:
+        1px solid var(--border-color);
+
+    background:
+        rgba(255,255,255,.03);
+
+}
+
+.nav-container {
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:0 1rem;
+
+}
