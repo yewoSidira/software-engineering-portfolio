@@ -125,12 +125,64 @@
 ========================================== */
 
 
-@media(max-width:900px){
+@media(max-width:768px){
+
+
+    .skills {
+
+        padding:5rem 0;
+
+    }
+
 
 
     .skills-grid {
 
         grid-template-columns:1fr;
+
+        gap:1.25rem;
+
+    }
+
+
+
+    .skill-card {
+
+        padding:1.5rem;
+
+        border-radius:16px;
+
+    }
+
+
+
+    .skill-card h3 {
+
+        font-size:1.1rem;
+
+        margin-bottom:1rem;
+
+    }
+
+
+
+    .skill-stack {
+
+        gap:.6rem;
+
+    }
+
+
+
+    .skill-stack .badge {
+
+        font-size:.75rem;
+
+        padding:
+
+            .35rem
+
+            .75rem;
 
     }
 

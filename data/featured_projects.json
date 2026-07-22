@@ -1,0 +1,62 @@
+[
+    {
+        "title": "Software Engineering Portfolio",
+        "description": "A Flask-based engineering portfolio built using reusable Jinja components, responsive layouts, and clean architecture principles.",
+        "roleTitle": "My Role",
+        "role": "Full Stack Developer",
+        "status": "Active",
+        "statusClass": "active",
+        "projectType": "Personal Project",
+        "stack": ["Flask", "Python", "HTML", "CSS"],
+        "repository": "https://github.com/yewoSidira/software-engineering-portfolio",
+        "demo": null
+    },
+    {
+        "title": "CampusConnect",
+        "description": "A university engagement platform focused on scalable backend architecture, secure authentication, notifications and modern API design.",
+        "roleTitle": "My Role",
+        "role": "Backend Engineer",
+        "status": "In Progress",
+        "statusClass": "active",
+        "projectType": "Team Project",
+        "stack": ["Python", "Flask", "PostgreSQL", "Redis", "Docker"],
+        "repository": "https://github.com/SIDIRAYEWO/CampusConnect",
+        "demo": null
+    },
+    {
+        "title": "Job Vacancies Platform",
+        "description": "A collaborative recruitment platform where employers publish vacancies and applicants discover opportunities.",
+        "roleTitle": "My Contribution",
+        "role": "Implemented administrator job posting workflow using React.",
+        "status": "Completed",
+        "statusClass": "complete",
+        "projectType": "Team Project",
+        "stack": ["React", "JavaScript", "Frontend"],
+        "repository": null,
+        "demo": null
+    },
+    {
+        "title": "Uni-Mart",
+        "description": "A university marketplace enabling students to buy and sell products across campus.",
+        "roleTitle": "My Contribution",
+        "role": "Designed and implemented the Inventory Service.",
+        "status": "Completed",
+        "statusClass": "complete",
+        "projectType": "Team Project",
+        "stack": ["JavaScript", "TypeScript", "Backend"],
+        "repository": "https://github.com/SIDIRAYEWO/inventory_service",
+        "demo": null
+    },
+    {
+        "title": "Photography Booking Platform",
+        "description": "A photography booking platform allowing customers to browse services and request appointments.",
+        "roleTitle": "My Role",
+        "role": "Frontend Developer",
+        "status": "Prototype",
+        "statusClass": "progress",
+        "projectType": "Personal Project",
+        "stack": ["HTML", "CSS", "JavaScript"],
+        "repository": "https://github.com/yewoSidira/PHOTOGRAPHY-WEBSITE",
+        "demo": null
+    }
+]

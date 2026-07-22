@@ -2,20 +2,109 @@
 <html lang="en">
 
 <head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>{% block title %}Portfolio{% endblock %}</title>
+
+    <title>
+        {% block title %}
+        Yewo Sidira | Backend Software Engineer
+        {% endblock %}
+    </title>
+
+
+    <meta name="description"
+          content="Yewo Sidira is a Backend Software Engineer specializing in scalable backend systems, REST APIs, Python, Flask, Django, and software architecture.">
+
+
+    <meta name="keywords"
+          content="
+          Backend Software Engineer,
+          Python Developer,
+          Flask Developer,
+          Django Developer,
+          REST APIs,
+          Software Architecture,
+          Backend Development
+          ">
+
+
+    <meta name="author"
+          content="Yewo Sidira">
+
+
+
+    <!-- Open Graph (LinkedIn, Facebook, Discord previews) -->
+
+    <meta property="og:title"
+          content="Yewo Sidira | Backend Software Engineer">
+
+
+    <meta property="og:description"
+          content="Building scalable software systems, secure APIs, and maintainable backend architectures.">
+
+
+    <meta property="og:type"
+          content="website">
+
+
+    <meta property="og:url"
+          content="YOUR_PORTFOLIO_URL">
+
+
+    <meta property="og:image"
+          content="{{ url_for('static', filename='images/preview.png') }}">
+
+
+
+    <!-- Twitter / X preview -->
+
+    <meta name="twitter:card"
+          content="summary_large_image">
+
+
+    <meta name="twitter:title"
+          content="Yewo Sidira | Backend Software Engineer">
+
+
+    <meta name="twitter:description"
+          content="Backend engineering portfolio showcasing scalable systems and software architecture.">
+
+
+
+    <!-- Theme -->
+
+    <meta name="theme-color"
+          content="#08090d">
+
+
+
+    <!-- Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+
+    <!-- CSS -->
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='css/style.css') }}">
+
+<link rel="icon"
+      type="image/svg+xml"
+      href="{{ url_for('static', filename='images/favicon.svg') }}">
 
 </head>
 

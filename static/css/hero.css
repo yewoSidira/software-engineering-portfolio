@@ -461,7 +461,21 @@
 ========================================== */
 
 
-@media(max-width:900px){
+@media(max-width:768px){
+
+
+    .hero {
+
+        min-height:auto;
+
+        padding:
+
+            7rem 0
+
+            4rem;
+
+    }
+
 
 
     .hero-grid {
@@ -473,16 +487,140 @@
     }
 
 
-    .tech-card {
 
-        max-width:500px;
+    .hero-content {
+
+        text-align:left;
 
     }
+
+
+
+    .hero h2 {
+
+        font-size:.85rem;
+
+        margin-bottom:1rem;
+
+    }
+
+
+
+    .hero h1 {
+
+        font-size:
+
+            clamp(2.5rem,12vw,3.5rem);
+
+        line-height:1.05;
+
+        letter-spacing:-.05em;
+
+    }
+
+
+
+    .hero h1 span {
+
+        display:block;
+
+        margin-top:.5rem;
+
+    }
+
+
+
+    .hero-description {
+
+        font-size:1rem;
+
+        line-height:1.75;
+
+        margin-bottom:1.5rem;
+
+    }
+
+
+
+    .hero-badge {
+
+        font-size:.8rem;
+
+        padding:.55rem .8rem;
+
+        max-width:100%;
+
+    }
+
+
+
+    .hero-buttons {
+
+        flex-direction:column;
+
+        width:100%;
+
+        gap:.85rem;
+
+    }
+
+
+
+    .hero-buttons a {
+
+        width:100%;
+
+    }
+
+
+
+    .tech-card {
+
+        padding:1.5rem;
+
+        border-radius:16px;
+
+    }
+
+
+
+    .card-header {
+
+        font-size:.7rem;
+
+    }
+
+
+
+    .technology {
+
+        padding:
+
+            .9rem
+
+            0;
+
+        font-size:.95rem;
+
+    }
+
 
 }
 
 .hero h1 span {
 
+    display:block;
+
+    margin-top:1rem;
+
+    font-size:.45em;
+
+    font-weight:500;
+
+    letter-spacing:-.02em;
+
     color:var(--accent);
+
+    line-height:1.2;
 
 }

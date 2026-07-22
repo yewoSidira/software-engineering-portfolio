@@ -145,9 +145,85 @@
 @media(max-width:768px){
 
 
+    .footer {
+
+        padding:
+
+            3rem
+
+            0
+
+            1.5rem;
+
+    }
+
+
+
     .footer-content {
 
         flex-direction:column;
+
+        gap:2rem;
+
+    }
+
+
+
+    .footer-brand {
+
+        max-width:100%;
+
+    }
+
+
+
+    .footer-brand h3 {
+
+        font-size:1.15rem;
+
+    }
+
+
+
+    .footer-brand p {
+
+        font-size:.9rem;
+
+    }
+
+
+
+    .footer-links {
+
+        gap:1rem;
+
+    }
+
+
+
+    .footer-links a {
+
+        font-size:.9rem;
+
+    }
+
+
+
+    .footer-bottom {
+
+        margin-top:2rem;
+
+        padding-top:1rem;
+
+        text-align:center;
+
+    }
+
+
+
+    .footer-bottom p {
+
+        font-size:.8rem;
 
     }
 
