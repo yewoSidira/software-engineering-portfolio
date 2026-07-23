@@ -690,3 +690,8 @@
     text-decoration: none;
 
 }
+
+.section-tag {
+    display: inline-block;
+    margin-bottom: 1rem; /* Increase to 1.25rem or 1.5rem if you want more space */
+}

@@ -1,115 +1,102 @@
-<!DOCTYPE html>
+<!DOCTYPE html lang="en">
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+    <!-- Primary SEO -->
     <title>
         {% block title %}
         Yewo Sidira | Backend Software Engineer
         {% endblock %}
     </title>
 
-
     <meta name="description"
-          content="Yewo Sidira is a Backend Software Engineer specializing in scalable backend systems, REST APIs, Python, Flask, Django, and software architecture.">
+          content="Yewo Sidira is a Backend Software Engineer specializing in Python, Flask, Django, APIs, scalable systems, and clean software architecture.">
 
 
-    <meta name="keywords"
-          content="
-          Backend Software Engineer,
-          Python Developer,
-          Flask Developer,
-          Django Developer,
-          REST APIs,
-          Software Architecture,
-          Backend Development
-          ">
-
-
-    <meta name="author"
-          content="Yewo Sidira">
-
-
-
-    <!-- Open Graph (LinkedIn, Facebook, Discord previews) -->
-
+    <!-- Open Graph (LinkedIn, Facebook, etc.) -->
     <meta property="og:title"
           content="Yewo Sidira | Backend Software Engineer">
 
-
     <meta property="og:description"
-          content="Building scalable software systems, secure APIs, and maintainable backend architectures.">
-
+          content="Building scalable backend systems, secure APIs, and reliable software applications using Python and JavaScript.">
 
     <meta property="og:type"
           content="website">
 
-
     <meta property="og:url"
-          content="YOUR_PORTFOLIO_URL">
-
+          content="https://yewosidira.dev">
 
     <meta property="og:image"
-          content="{{ url_for('static', filename='images/preview.png') }}">
+          content="{{ url_for('static', filename='images/profile-preview.png', _external=True) }}">
 
 
-
-    <!-- Twitter / X preview -->
-
+    <!-- Twitter -->
     <meta name="twitter:card"
           content="summary_large_image">
-
 
     <meta name="twitter:title"
           content="Yewo Sidira | Backend Software Engineer">
 
-
     <meta name="twitter:description"
-          content="Backend engineering portfolio showcasing scalable systems and software architecture.">
+          content="Backend engineering portfolio showcasing APIs, architecture, and software projects.">
 
 
-
-    <!-- Theme -->
-
-    <meta name="theme-color"
-          content="#08090d">
+    <!-- Canonical -->
+    <link rel="canonical"
+          href="https://yewosidira.dev">
 
 
-
-    <!-- Fonts -->
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet">
-
-
-
-    <!-- CSS -->
-
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/style.css') }}">
-
-<link rel="icon"
+    <!-- Favicon (we add file next) -->
+    <link rel="icon"
       type="image/svg+xml"
       href="{{ url_for('static', filename='images/favicon.svg') }}">
 
+      <link rel="apple-touch-icon"
+      href="{{ url_for('static', filename='images/favicon.svg') }}">
+
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+
+          <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Yewo Sidira",
+    "jobTitle": "Backend Software Engineer",
+    "description": "Backend Software Engineer specializing in Python, Flask, Django, APIs, scalable systems, and clean software architecture.",
+    "url": "https://yewosidira.dev",
+    "image": "https://yewosidira.dev/static/images/profile-preview.png",
+    "sameAs": [
+        "https://github.com/SIDIRAYEWO",
+        "https://www.linkedin.com/in/yewo-sidira/"
+    ],
+    "knowsAbout": [
+        "Python",
+        "Flask",
+        "Django",
+        "REST APIs",
+        "JavaScript",
+        "Git",
+        "SQL",
+        "Software Architecture"
+    ]
+}
+</script>
 </head>
 
 <body>
 
+    <a href="#main-content" class="skip-link">
+    Skip to main content
+</a>
     {% block content %}
     {% endblock %}
 <script>

@@ -93,3 +93,29 @@ section {
     scroll-margin-top:100px;
 
 }
+
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 1rem;
+    background: var(--accent-color);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    z-index: 1000;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
