@@ -695,3 +695,10 @@
     display: inline-block;
     margin-bottom: 1rem; /* Increase to 1.25rem or 1.5rem if you want more space */
 }
+
+.building-note {
+    margin-top: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-style: italic;
+}
