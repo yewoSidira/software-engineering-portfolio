@@ -200,3 +200,23 @@
 
 
 }
+
+@media (max-width: 768px){
+
+    .navbar{
+
+        backdrop-filter:none;
+
+        background:#08090d;
+
+    }
+
+    .card{
+
+        backdrop-filter:none;
+
+        background:rgba(255,255,255,.04);
+
+    }
+
+}

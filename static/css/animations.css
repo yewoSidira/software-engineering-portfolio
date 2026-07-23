@@ -13,13 +13,13 @@
     opacity:0;
 
     transform:
-        translateY(40px);
+        translateY(18px);
 
     transition:
 
         opacity .8s ease,
 
-        transform .8s ease;
+        transform .45s ease;
 
 }
 

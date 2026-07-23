@@ -15,8 +15,8 @@
     background:
         rgba(8,9,13,.75);
 
-    backdrop-filter:
-        blur(16px);
+   /* backdrop-filter: 
+        blur(16px); */
 
     border-bottom:
         1px solid var(--border-color);
@@ -367,7 +367,7 @@
 }
 
 
-.navbar {
+/* .navbar {
     position: fixed;
     top:0;
     left:0;
@@ -385,4 +385,4 @@
     border-bottom:
         1px solid var(--border-color);
 
-}
+} */
