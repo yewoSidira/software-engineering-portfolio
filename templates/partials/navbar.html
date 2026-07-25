@@ -1,59 +1,80 @@
-<nav aria-label="primary navigation" class="navbar">
+<nav class="navbar" aria-label="Primary navigation">
 
     <div class="container nav-container">
 
-
-        <a class="nav-logo" href="#home">
+        <!-- Logo -->
+        <a href="#home" class="nav-logo" aria-label="Homepage">
 
             <span class="logo-mark">
                 YS
             </span>
 
-           
+            <span class="logo-text">
+                Yewo Sidira
+            </span>
 
         </a>
 
 
-        <button class="menu-toggle" aria-label="Toggle navigation">
-
-            ☰
-
-        </button>
-
-
-        <ul class="nav-links">
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="nav-links">
 
             <li>
-                <a href="#home">
-                    Home
-                </a>
+                <a href="#home">Home</a>
             </li>
 
             <li>
-                <a href="#projects">
-                    Projects
-                </a>
+                <a href="#projects">Projects</a>
             </li>
 
             <li>
-                <a href="#about">
-                    About
-                </a>
+                <a href="#about">About</a>
             </li>
 
             <li>
-                <a href="#skills">
-                    Skills
-                </a>
+                <a href="#skills">Skills</a>
             </li>
 
             <li>
-                <a href="#contact">
-                    Contact
-                </a>
+                <a href="#contact">Contact</a>
             </li>
 
         </ul>
+
+
+        <!-- Actions -->
+        <div class="nav-actions">
+
+
+            <!-- Theme Toggle -->
+            <button
+                id="theme-toggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="Switch theme"
+                title="Switch theme">
+
+                <span id="theme-icon">
+                    🌙
+                </span>
+
+            </button>
+
+
+            <!-- Mobile Menu -->
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-controls="nav-links"
+                aria-expanded="false">
+
+                ☰
+
+            </button>
+
+
+        </div>
 
 
     </div>

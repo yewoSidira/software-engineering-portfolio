@@ -1,29 +1,39 @@
-<!DOCTYPE html lang="en">
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
 
     <!-- Primary SEO -->
+
     <title>
         {% block title %}
         Yewo Sidira | Backend Software Engineer
         {% endblock %}
     </title>
 
+
     <meta name="description"
-          content="Yewo Sidira is a Backend Software Engineer specializing in Python, Flask, Django, APIs, scalable systems, and clean software architecture.">
+          content="Yewo Sidira is a Backend Software Engineer specializing in Python, Django, Flask, APIs, scalable systems, and clean software architecture.">
 
 
-    <!-- Open Graph (LinkedIn, Facebook, etc.) -->
+    <meta name="author"
+          content="Yewo Sidira">
+
+
+
+    <!-- Open Graph -->
+
     <meta property="og:title"
           content="Yewo Sidira | Backend Software Engineer">
 
     <meta property="og:description"
-          content="Building scalable backend systems, secure APIs, and reliable software applications using Python and JavaScript.">
+          content="Backend engineering portfolio showcasing scalable systems, APIs, architecture, and software projects.">
 
     <meta property="og:type"
           content="website">
@@ -35,7 +45,9 @@
           content="{{ url_for('static', filename='images/profile-preview.png', _external=True) }}">
 
 
+
     <!-- Twitter -->
+
     <meta name="twitter:card"
           content="summary_large_image">
 
@@ -43,66 +55,130 @@
           content="Yewo Sidira | Backend Software Engineer">
 
     <meta name="twitter:description"
-          content="Backend engineering portfolio showcasing APIs, architecture, and software projects.">
+          content="Building scalable backend systems, APIs, and reliable software applications.">
+
+
 
 
     <!-- Canonical -->
+
     <link rel="canonical"
           href="https://yewosidira.dev">
 
 
-    <!-- Favicon (we add file next) -->
-    <link rel="icon"
-      type="image/svg+xml"
-      href="{{ url_for('static', filename='images/favicon.svg') }}">
 
-      <link rel="apple-touch-icon"
-      href="{{ url_for('static', filename='images/favicon.svg') }}">
+    <!-- Favicon -->
+
+    <link rel="icon"
+          type="image/svg+xml"
+          href="{{ url_for('static', filename='images/favicon.svg') }}">
+
+
+    <link rel="apple-touch-icon"
+          href="{{ url_for('static', filename='images/favicon.svg') }}">
+
+
+
+
+    <!-- Performance -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
 
 
     <!-- CSS -->
+
     <link rel="stylesheet"
           href="{{ url_for('static', filename='css/style.css') }}">
 
 
-          <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Yewo Sidira",
-    "jobTitle": "Backend Software Engineer",
-    "description": "Backend Software Engineer specializing in Python, Flask, Django, APIs, scalable systems, and clean software architecture.",
-    "url": "https://yewosidira.dev",
-    "image": "https://yewosidira.dev/static/images/profile-preview.png",
-    "sameAs": [
-        "https://github.com/SIDIRAYEWO",
-        "https://www.linkedin.com/in/yewo-sidira/"
-    ],
-    "knowsAbout": [
-        "Python",
-        "Flask",
-        "Django",
-        "REST APIs",
-        "JavaScript",
-        "Git",
-        "SQL",
-        "Software Architecture"
-    ]
-}
-</script>
+
+    <!-- Prevent theme flashing -->
+
+    <script>
+
+        (function () {
+
+            const savedTheme = localStorage.getItem("theme");
+
+            if (savedTheme) {
+
+                document.documentElement.dataset.theme = savedTheme;
+
+            }
+
+        })();
+
+    </script>
+
+
+
+
+    <!-- Structured Data -->
+
+    <script type="application/ld+json">
+
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Yewo Sidira",
+        "jobTitle": "Backend Software Engineer",
+        "description": "Backend Software Engineer specializing in Python, Django, Flask, APIs, scalable systems, and clean software architecture.",
+        "url": "https://yewosidira.dev",
+        "image": "https://yewosidira.dev/static/images/profile-preview.png",
+
+        "sameAs": [
+            "https://github.com/SIDIRAYEWO",
+            "https://www.linkedin.com/in/yewo-sidira/"
+        ],
+
+        "knowsAbout": [
+            "Python",
+            "Django",
+            "Flask",
+            "REST APIs",
+            "JavaScript",
+            "Docker",
+            "PostgreSQL",
+            "Software Architecture"
+        ]
+    }
+
+    </script>
+
+
 </head>
+
+
 
 <body>
 
-    <a href="#main-content" class="skip-link">
-    Skip to main content
-</a>
+
+    <a href="#main-content"
+       class="skip-link">
+
+        Skip to main content
+
+    </a>
+
+
+
     {% block content %}
+
     {% endblock %}
-<script>
-    console.log("main.js loaded");
-</script>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+
+
+    <script
+        src="{{ url_for('static', filename='js/main.js') }}"
+        defer>
+    </script>
+
 
 </body>
 

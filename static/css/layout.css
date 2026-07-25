@@ -2,58 +2,121 @@
    LAYOUT
 ========================================== */
 
+/* ==========================================
+   GLOBAL RESET
+========================================== */
 
-.container {
+*,
+*::before,
+*::after{
 
-    width:min(1200px, 90%);
+    box-sizing:border-box;
+
+}
+
+/* ==========================================
+   PAGE
+========================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+    overflow-x:hidden;
+
+}
+body {
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: scroll; /* Keeps the scrollbar permanently so it doesn't flash */
+    background: var(--page-bg);
+    color: var(--text-primary);
+    /* ADD THIS BELOW: */
+    background-attachment: fixed; /* Forces the background to anchor to the viewport edge */
+}
+
+main{
+    /* REMOVED overflow-x:hidden; to fix the right-edge double line */
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container{
+
+    width:min(1200px,90%);
+
     margin:0 auto;
 
 }
 
+/* ==========================================
+   SECTIONS
+========================================== */
 
-.section {
+.section{
 
-    padding:
-        7rem 0;
+    position:relative;
+
+    padding:7rem 0;
+
+    border-top:1px solid var(--border-color);
 
 }
 
+/* ==========================================
+   UTILITIES
+========================================== */
 
-/* Grid Utilities */
-
-.grid {
+.grid{
 
     display:grid;
 
 }
 
-
-.flex {
+.flex{
 
     display:flex;
 
 }
 
+/* ==========================================
+   HERO
+========================================== */
 
-/* Page spacing */
+.hero{
 
-main {
-
-    overflow:hidden;
-
-}
-
-.section {
-
-    border-top:
-        1px solid var(--border-color);
+    border-bottom:1px solid var(--border-color);
 
 }
 
+/* ==========================================
+   MOBILE
+========================================== */
 
-.hero {
+@media(max-width:768px){
 
-    border-bottom:
-        1px solid var(--border-color);
+    .container{
+
+        width:92%;
+
+    }
+
+    .section{
+
+        padding:5rem 0;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .container{
+
+        width:94%;
+
+    }
 
 }

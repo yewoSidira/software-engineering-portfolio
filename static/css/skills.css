@@ -10,7 +10,6 @@
 }
 
 
-
 /* ==========================================
    GRID
 ========================================== */
@@ -21,14 +20,13 @@
     display:grid;
 
     grid-template-columns:
-        repeat(2,1fr);
+        repeat(2, minmax(0,1fr));
 
     gap:2rem;
 
     margin-top:3rem;
 
 }
-
 
 
 /* ==========================================
@@ -44,10 +42,12 @@
 
     overflow:hidden;
 
-    transition:.3s ease;
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease;
 
 }
-
 
 
 .skill-card::before {
@@ -71,19 +71,18 @@
             transparent
         );
 
-    opacity:.6;
+    opacity:.7;
 
 }
-
 
 
 .skill-card:hover {
 
-    transform:
-        translateY(-6px);
+    transform:translateY(-5px);
+
+    border-color:var(--accent);
 
 }
-
 
 
 /* ==========================================
@@ -99,12 +98,13 @@
 
     letter-spacing:-.02em;
 
+    color:var(--text-primary);
+
 }
 
 
-
 /* ==========================================
-   STACK
+   SKILL TAGS
 ========================================== */
 
 
@@ -119,34 +119,45 @@
 }
 
 
-
 /* ==========================================
    RESPONSIVE
 ========================================== */
 
 
+@media(max-width:1024px){
+
+    .skills-grid{
+
+        gap:1.5rem;
+
+    }
+
+}
+
+
+
 @media(max-width:768px){
 
 
-    .skills {
+    .skills{
 
         padding:5rem 0;
 
     }
 
 
-
-    .skills-grid {
+    .skills-grid{
 
         grid-template-columns:1fr;
 
         gap:1.25rem;
 
+        margin-top:2rem;
+
     }
 
 
-
-    .skill-card {
+    .skill-card{
 
         padding:1.5rem;
 
@@ -155,8 +166,7 @@
     }
 
 
-
-    .skill-card h3 {
+    .skill-card h3{
 
         font-size:1.1rem;
 
@@ -165,26 +175,47 @@
     }
 
 
-
-    .skill-stack {
+    .skill-stack{
 
         gap:.6rem;
 
     }
 
 
-
-    .skill-stack .badge {
+    .skill-stack .badge{
 
         font-size:.75rem;
 
         padding:
-
             .35rem
-
             .75rem;
 
     }
 
+}
+
+
+@media(max-width:480px){
+
+
+    .skills{
+
+        padding:4rem 0;
+
+    }
+
+
+    .skill-card{
+
+        padding:1.25rem;
+
+    }
+
+
+    .skill-stack .badge{
+
+        font-size:.7rem;
+
+    }
 
 }

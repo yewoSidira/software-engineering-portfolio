@@ -1,0 +1,163 @@
+/* ==========================================
+   DARK THEME (DEFAULT)
+========================================== */
+
+
+:root {
+
+
+    --page-bg:
+        radial-gradient(
+            circle at top,
+            rgba(56,189,248,.08),
+            transparent 35%
+        ),
+        #08090d;
+
+
+    --bg-primary:#08090d;
+
+    --bg-secondary:#0d1117;
+
+
+
+    --navbar-bg:rgba(8,9,13,.92);
+
+    --navbar-bg-scrolled:rgba(8,9,13,.98);
+
+
+
+    --surface:#111827;
+
+
+
+    --card-bg:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.02)
+        );
+
+
+
+    --card-bg-light:rgba(255,255,255,.04);
+
+
+
+    --footer-bg:rgba(255,255,255,.02);
+
+
+
+    --badge-bg:rgba(255,255,255,.05);
+
+
+
+    --tag-bg:rgba(56,189,248,.08);
+
+
+
+    --button-secondary:rgba(255,255,255,.04);
+
+
+
+    --text-primary:#f5f7fa;
+
+    --text-secondary:#9ca3af;
+
+    --text-muted:#6b7280;
+
+
+
+    --accent:#38bdf8;
+
+    --accent-soft:rgba(56,189,248,.15);
+
+
+
+    --border-color:rgba(255,255,255,.08);
+
+
+
+    --shadow:
+        0 20px 60px rgba(0,0,0,.35);
+
+}
+
+
+
+
+
+/* ==========================================
+   LIGHT THEME
+========================================== */
+
+
+html[data-theme="light"] {
+
+
+    --page-bg:#ffffff;
+
+
+
+    --bg-primary:#ffffff;
+
+    --bg-secondary:#f8fafc;
+
+
+
+    --navbar-bg:#ffffff;
+
+    --navbar-bg-scrolled:#ffffff;
+
+
+
+    --surface:#f8fafc;
+
+
+
+    --card-bg:#ffffff;
+
+
+
+    --card-bg-light:#f8fafc;
+
+
+
+    --footer-bg:#f8fafc;
+
+
+
+    --badge-bg:#f1f5f9;
+
+
+
+    --tag-bg:#eff6ff;
+
+
+
+    --button-secondary:#ffffff;
+
+
+
+    --text-primary:#0f172a;
+
+    --text-secondary:#475569;
+
+    --text-muted:#64748b;
+
+
+
+    --accent:#2563eb;
+
+    --accent-soft:#dbeafe;
+
+
+
+    --border-color:#e2e8f0;
+
+
+
+    --shadow:
+        0 10px 30px rgba(15,23,42,.08);
+
+}

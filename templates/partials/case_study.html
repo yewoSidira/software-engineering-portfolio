@@ -1,169 +1,323 @@
-<section class="section">
+<section class="section case-study-section reveal" aria-labelledby="campusconnect-title">
 
     <div class="container">
 
-        <div class="section-header">
 
-            <div class="section-tag">
+        <header class="section-header">
+
+            <span class="section-tag">
                 Featured Project
-            </div>
+            </span>
 
-            <h2 class="section-title">
+
+            <h2 id="campusconnect-title" class="section-title">
                 CampusConnect
             </h2>
+
 
             <p>
                 A university engagement platform designed to centralize
                 announcements, events, clubs, and communication while
-                demonstrating scalable backend architecture.
+                demonstrating scalable backend engineering practices.
             </p>
 
-        </div>
+
+        </header>
+
+
+
 
         <div class="case-study">
 
+
+
             <div class="case-content">
 
-                <div class="project-card card">
 
-                    <h3>Problem</h3>
+                <article class="project-card card">
+
+                    <h3>
+                        Problem
+                    </h3>
+
 
                     <p>
                         Universities often rely on fragmented communication
-                        channels including WhatsApp groups, notice boards,
-                        Facebook pages, and email. This leads to missed
-                        announcements and inconsistent information.
+                        channels such as WhatsApp groups, notice boards,
+                        social media pages, and email. This creates missed
+                        announcements and inconsistent information flow.
                     </p>
 
-                </div>
 
-                <div class="project-card card">
+                </article>
 
-                    <h3>Solution</h3>
+
+
+
+                <article class="project-card card">
+
+                    <h3>
+                        Solution
+                    </h3>
+
 
                     <p>
                         CampusConnect provides a centralized platform where
-                        university administrators, student organizations,
-                        and clubs can publish verified announcements,
-                        manage events, and communicate efficiently with
-                        students.
+                        administrators, student organizations, and clubs can
+                        publish verified announcements, manage events, and
+                        communicate effectively with students.
                     </p>
 
-                </div>
 
-                <div class="project-card card">
+                </article>
 
-                    <h3>Architecture</h3>
+
+
+
+                <article class="project-card card">
+
+                    <h3>
+                        Architecture
+                    </h3>
+
 
                     <p>
-                        CampusConnect follows a modular backend architecture
-                        designed for scalability and maintainability.
+                        The system follows a modular backend architecture
+                        focused on scalability, security, and maintainability.
                     </p>
 
-                    <div class="architecture">
 
-                        <div>Users</div>
 
-                        <span>↓</span>
+                    <div class="architecture"
+                         aria-label="System architecture">
 
-                        <div>REST API</div>
 
-                        <span>↓</span>
+                        <div>
+                            Users
+                        </div>
+
+
+                        <span aria-hidden="true">
+                            ↓
+                        </span>
+
+
+                        <div>
+                            Django REST API
+                        </div>
+
+
+                        <span aria-hidden="true">
+                            ↓
+                        </span>
+
 
                         <div class="architecture-row">
 
-                            <div>PostgreSQL</div>
 
-                            <div>Redis</div>
+                            <div>
+                                PostgreSQL
+                            </div>
 
-                            <div>Storage</div>
+
+                            <div>
+                                Redis
+                            </div>
+
+
+                            <div>
+                                Object Storage
+                            </div>
+
 
                         </div>
 
+
                     </div>
 
-                </div>
 
-                <div class="project-card card">
+                </article>
 
-                    <h3>Engineering Decisions</h3>
+
+
+
+
+                <article class="project-card card">
+
+                    <h3>
+                        Engineering Decisions
+                    </h3>
+
 
                     <ul class="decision-list">
 
-                        <li>REST API architecture using Flask</li>
 
-                        <li>PostgreSQL for relational data integrity</li>
+                        <li>
+                            Django REST Framework API architecture
+                        </li>
 
-                        <li>Redis for caching and future background jobs</li>
 
-                        <li>Dockerized development environment</li>
+                        <li>
+                            PostgreSQL for reliable relational data management
+                        </li>
 
-                        <li>Role-based authentication and permissions</li>
+
+                        <li>
+                            Redis for caching and asynchronous processing
+                        </li>
+
+
+                        <li>
+                            Dockerized development environment
+                        </li>
+
+
+                        <li>
+                            JWT authentication with role-based permissions
+                        </li>
+
 
                     </ul>
 
-                </div>
+
+                </article>
+
+
+
 
             </div>
 
-            <aside class="project-sidebar">
+
+
+
+
+            <aside class="project-sidebar"
+                   aria-label="CampusConnect details">
+
+
 
                 <div class="project-card card">
 
-                    <h3>Tech Stack</h3>
+
+                    <h3>
+                        Tech Stack
+                    </h3>
+
+
 
                     <div class="project-stack">
 
-                        <span class="badge">Python</span>
-                        <span class="badge">Flask</span>
-                        <span class="badge">PostgreSQL</span>
-                        <span class="badge">Redis</span>
-                        <span class="badge">Docker</span>
-                        <span class="badge">Git</span>
-                        <span class="badge">HTML</span>
-                        <span class="badge">CSS</span>
+
+                        <span class="badge">
+                            Python
+                        </span>
+
+
+                        <span class="badge">
+                            Django
+                        </span>
+
+
+                        <span class="badge">
+                            Django REST Framework
+                        </span>
+
+
+                        <span class="badge">
+                            PostgreSQL
+                        </span>
+
+
+                        <span class="badge">
+                            Redis
+                        </span>
+
+
+                        <span class="badge">
+                            Docker
+                        </span>
+
+
+                        <span class="badge">
+                            Git
+                        </span>
+
 
                     </div>
+
 
                 </div>
 
+
+
+
+
                 <div class="project-card card">
 
-                    <h3>Status</h3>
 
-                    <div class="project-status">
+                    <h3>
+                        Status
+                    </h3>
+
+
+                    <span class="status">
                         ● Active Development
-                    </div>
+                    </span>
+
+
 
                     <p>
-                        Currently building the backend architecture,
-                        authentication system, and deployment pipeline.
+                        Currently developing backend services,
+                        authentication, and deployment infrastructure.
                     </p>
+
 
                 </div>
 
+
+
+
+
                 <div class="project-card card">
 
-                    <h3>Links</h3>
+
+                    <h3>
+                        Links
+                    </h3>
+
+
 
                     <div class="hero-actions">
 
-                        <a href="https://github.com/SIDIRAYEWO/CampusConnect.git" class="secondary-btn">
+
+                        <a
+                            href="https://github.com/SIDIRAYEWO/CampusConnect"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="secondary-btn">
+
                             GitHub Repository
+
                         </a>
 
-                       <!-- <a href="https://github.com/SIDIRAYEWO/CampusConnect.git" class="secondary-btn">
-                            Live Demo
-                        </a> -->
 
                     </div>
 
+
                 </div>
+
+
+
 
             </aside>
 
+
+
         </div>
 
+
+
     </div>
+
 
 </section>

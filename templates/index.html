@@ -1,35 +1,61 @@
 {% extends "base.html" %}
 
+
 {% block title %}
-Yewo Sidira | Software Engineer
+Yewo Sidira | Backend Software Engineer
 {% endblock %}
 
+
+
 {% block content %}
+
 
 {% include "partials/navbar.html" %}
 
 
 
-{% include "partials/hero.html" %}
-
-<section id="projects"> 
-{% include "partials/building.html" %}
-
-{% include "partials/case_study.html" %}
-{% include "partials/engineering_work.html" %}
-</section> 
+<main id="main-content">
 
 
-{% include "partials/about.html" %}
+    {% include "partials/hero.html" %}
 
-{% include "partials/skills.html" %}
 
-{% include "partials/contact.html" %}
+
+    <section id="projects"
+             class="projects-section">
+
+
+        {% include "partials/building.html" %}
+
+
+        {% include "partials/case_study.html" %}
+
+
+        {% include "partials/engineering_work.html" %}
+
+
+    </section>
+
+
+
+    {% include "partials/about.html" %}
+
+
+
+    {% include "partials/skills.html" %}
+
+
+
+    {% include "partials/contact.html" %}
+
+
+
+</main>
+
+
 
 {% include "partials/footer.html" %}
 
 
 
-
 {% endblock %}
-

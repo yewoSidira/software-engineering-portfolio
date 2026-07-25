@@ -344,3 +344,95 @@ async function loadProjects() {
 }
 
 loadProjects();
+
+/* ==========================================
+   THEME SWITCHER
+========================================== */
+
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = document.getElementById("theme-icon");
+
+const themes = ["system", "dark", "light"];
+
+let currentTheme =
+    localStorage.getItem("theme") || "system";
+
+
+function applyTheme(theme){
+
+    if(theme === "system"){
+
+        document.documentElement.removeAttribute("data-theme");
+
+        const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+        ).matches;
+
+        themeIcon.textContent = "💻";
+
+        if(!prefersDark){
+
+            document.documentElement.setAttribute(
+                "data-theme",
+                "light"
+            );
+
+        }
+
+    }
+
+    else if(theme === "dark"){
+
+        document.documentElement.removeAttribute(
+            "data-theme"
+        );
+
+        themeIcon.textContent = "🌙";
+
+    }
+
+    else{
+
+        document.documentElement.setAttribute(
+            "data-theme",
+            "light"
+        );
+
+        themeIcon.textContent = "☀️";
+
+    }
+
+    localStorage.setItem(
+        "theme",
+        theme
+    );
+
+}
+
+
+applyTheme(currentTheme);
+
+
+themeToggle?.addEventListener("click", () => {
+
+    let index = themes.indexOf(currentTheme);
+
+    index = (index + 1) % themes.length;
+
+    currentTheme = themes[index];
+
+    applyTheme(currentTheme);
+
+});
+
+
+window.matchMedia("(prefers-color-scheme: dark)")
+.addEventListener("change", () => {
+
+    if(currentTheme === "system"){
+
+        applyTheme("system");
+
+    }
+
+});

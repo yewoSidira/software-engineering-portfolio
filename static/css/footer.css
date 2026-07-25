@@ -6,21 +6,20 @@
 .footer {
 
     padding:
-        4rem 0
-        2rem;
+        4rem 0 2rem;
 
     border-top:
         1px solid var(--border-color);
 
     background:
-        rgba(255,255,255,.015);
+        var(--footer-bg);
 
 }
 
 
 
 /* ==========================================
-   FOOTER CONTENT
+   CONTENT
 ========================================== */
 
 
@@ -40,7 +39,7 @@
 
 .footer-brand {
 
-    max-width:350px;
+    max-width:380px;
 
 }
 
@@ -54,16 +53,17 @@
 
     letter-spacing:-.03em;
 
+    color:var(--text-primary);
+
 }
 
 
 
 .footer-brand p {
 
-    color:
-        var(--text-secondary);
+    color:var(--text-secondary);
 
-    line-height:1.7;
+    line-height:1.8;
 
 }
 
@@ -88,12 +88,12 @@
 
 .footer-links a {
 
-    color:
-        var(--text-secondary);
+    color:var(--text-secondary);
 
     text-decoration:none;
 
-    transition:.3s;
+    transition:
+        color .2s ease;
 
 }
 
@@ -101,8 +101,7 @@
 
 .footer-links a:hover {
 
-    color:
-        var(--accent);
+    color:var(--accent);
 
 }
 
@@ -128,8 +127,7 @@
 
 .footer-bottom p {
 
-    color:
-        var(--text-muted);
+    color:var(--text-muted);
 
     font-size:.9rem;
 
@@ -138,7 +136,7 @@
 
 
 /* ==========================================
-   RESPONSIVE
+   TABLET + MOBILE
 ========================================== */
 
 
@@ -148,12 +146,7 @@
     .footer {
 
         padding:
-
-            3rem
-
-            0
-
-            1.5rem;
+            3rem 0 1.5rem;
 
     }
 
@@ -187,13 +180,20 @@
 
     .footer-brand p {
 
-        font-size:.9rem;
+        font-size:.95rem;
 
     }
 
 
 
     .footer-links {
+
+        width:100%;
+
+        display:grid;
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
 
         gap:1rem;
 
@@ -216,6 +216,52 @@
         padding-top:1rem;
 
         text-align:center;
+
+    }
+
+
+}
+
+
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+
+@media(max-width:480px){
+
+
+    .footer {
+
+        padding:
+            2.5rem 0 1.25rem;
+
+    }
+
+
+
+    .footer-links {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .footer-brand h3 {
+
+        font-size:1.05rem;
+
+    }
+
+
+
+    .footer-brand p {
+
+        font-size:.9rem;
+
+        line-height:1.7;
 
     }
 

@@ -1,20 +1,24 @@
-<section id="projects" class="projects reveal">
+<section id="projects" class="projects reveal" aria-labelledby="building-title">
 
     <div class="container">
 
-        <div class="section-header">
 
-            <div class="section-tag">
+        <header class="section-header">
+
+            <span class="section-tag">
                 Currently Building
-            </div>
+            </span>
 
-            <h2 class="section-title">
+            <h2 id="building-title" class="section-title">
                 CampusConnect
             </h2>
 
-        </div>
+        </header>
+
+
 
         <article class="project-card card featured-project">
+
 
             <div class="project-header">
 
@@ -24,28 +28,45 @@
                         University Engagement Platform
                     </h3>
 
-                    <span class="project-status">
+
+                    <span class="status">
                         Active Development
                     </span>
 
+
                 </div>
+
 
             </div>
 
-            <p class="project-description">
-                A scalable platform designed to improve communication between
-                universities, students, clubs, and administration.
-            </p>
 
-            <p class="project-description">
-                The system focuses on backend architecture, secure APIs,
-                authentication, notifications, and scalable infrastructure.
-            </p>
 
-            <div class="project-stack">
+            <div class="project-description">
+
+                <p>
+                    A scalable university platform designed to improve
+                    communication between students, clubs, faculty, and
+                    administration.
+                </p>
+
+
+                <p>
+                    The system focuses on backend architecture, secure REST
+                    APIs, authentication, notifications, and scalable
+                    infrastructure using modern development practices.
+                </p>
+
+            </div>
+
+
+
+
+            <div class="project-stack"
+                 aria-label="Technologies used">
 
                 <span class="badge">Python</span>
-                <span class="badge">Flask</span>
+                <span class="badge">Django</span>
+                <span class="badge">Django REST Framework</span>
                 <span class="badge">PostgreSQL</span>
                 <span class="badge">Redis</span>
                 <span class="badge">Docker</span>
@@ -53,18 +74,30 @@
 
             </div>
 
-            <div class="project-footer">
 
-                <span>Backend Engineering Project</span>
 
-       <p class="building-note">
-    Public updates will be available as development milestones are completed.
-</p>
 
-            </div>
+            <footer class="project-footer">
+
+                <span>
+                    Backend Engineering Project
+                </span>
+
+
+                <p class="building-note">
+                    Public updates will be available as development milestones
+                    are completed.
+                </p>
+
+
+            </footer>
+
+
 
         </article>
 
+
     </div>
+
 
 </section>

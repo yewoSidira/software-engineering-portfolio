@@ -20,6 +20,13 @@
     }
 
 
+    .hero-content {
+
+        max-width:700px;
+
+    }
+
+
     .hero-panel {
 
         max-width:650px;
@@ -31,12 +38,23 @@
 
         grid-template-columns:1fr;
 
+        gap:3rem;
+
     }
 
 
     .case-study {
 
         grid-template-columns:1fr;
+
+    }
+
+
+    .project-sidebar {
+
+        display:grid;
+
+        grid-template-columns:repeat(2,1fr);
 
     }
 
@@ -60,7 +78,6 @@
     }
 
 
-
     .section,
     .projects,
     .about,
@@ -77,6 +94,16 @@
 
         padding-top:7rem;
 
+        min-height:auto;
+
+    }
+
+
+
+    .hero-grid {
+
+        gap:2.5rem;
+
     }
 
 
@@ -84,6 +111,8 @@
     .hero h1 {
 
         font-size:2.8rem;
+
+        letter-spacing:-.05em;
 
     }
 
@@ -93,21 +122,15 @@
 
         font-size:1rem;
 
+        line-height:1.7;
+
     }
 
 
 
-    .hero-actions {
+    .hero-buttons {
 
         flex-direction:column;
-
-        align-items:stretch;
-
-    }
-
-
-
-    .hero-actions a {
 
         width:100%;
 
@@ -115,17 +138,28 @@
 
 
 
-    .hero-stats {
+    .hero-buttons a {
 
-        flex-direction:column;
+        width:100%;
 
-        gap:1.5rem;
+        justify-content:center;
 
     }
 
 
 
-    .project-grid {
+    .hero-badge {
+
+        max-width:100%;
+
+        font-size:.8rem;
+
+    }
+
+
+
+    .project-grid,
+    .projects-grid {
 
         grid-template-columns:1fr;
 
@@ -137,7 +171,7 @@
 
         flex-direction:column;
 
-        gap:1rem;
+        gap:.8rem;
 
     }
 
@@ -148,6 +182,14 @@
         flex-direction:column;
 
         align-items:flex-start;
+
+    }
+
+
+
+    .project-sidebar {
+
+        grid-template-columns:1fr;
 
     }
 
@@ -165,7 +207,10 @@
 
         flex-direction:column;
 
+        gap:2rem;
+
     }
+
 
 
 }
@@ -176,13 +221,16 @@
    SMALL PHONES
 ========================================== */
 
+
 @media(max-width:480px){
+
 
     .hero h1 {
 
-        font-size:2.4rem;
+        font-size:2.35rem;
 
     }
+
 
 
     .hero-description {
@@ -192,6 +240,15 @@
     }
 
 
+
+    .section-title {
+
+        font-size:2rem;
+
+    }
+
+
+
     .hero-badge {
 
         align-items:flex-start;
@@ -199,24 +256,48 @@
     }
 
 
+
+    .project-card {
+
+        padding:1.25rem;
+
+    }
+
+
 }
 
-@media (max-width: 768px){
 
-    .navbar{
+
+/* ==========================================
+   MOBILE PERFORMANCE OPTIMIZATION
+========================================== */
+
+
+@media(max-width:768px){
+
+
+    .navbar {
 
         backdrop-filter:none;
 
-        background:#08090d;
+        -webkit-backdrop-filter:none;
+
+        background:var(--bg-primary);
 
     }
 
-    .card{
+
+
+    .card,
+    .tech-card,
+    .project-card,
+    .skill-card {
 
         backdrop-filter:none;
 
-        background:rgba(255,255,255,.04);
+        -webkit-backdrop-filter:none;
 
     }
+
 
 }
