@@ -156,7 +156,7 @@ const demoButton = project.demo
                     <span>${project.role}</span>
                 </div>
                 <div class="project-tags">${stack}<span>${project.projectType}</span></div>
-                <div class="project-footer">${repositoryButton}</div>
+                <div class="project-footer">${repositoryButton}${demoButton}</div>
             `;
 
             projectsContainer.appendChild(card);
