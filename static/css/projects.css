@@ -230,6 +230,12 @@
 
     padding-top:1rem;
 
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.75rem;
+
 }
 
 
@@ -496,5 +502,64 @@
         padding:1rem;
 
     }
+
+}
+
+/* ==========================================
+   FOOTER / LINKS
+========================================== */
+
+.project-footer {
+
+    margin-top:auto;
+
+    padding-top:1rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.75rem;
+
+}
+
+
+.project-link {
+
+    display:inline-flex;
+
+    align-items:center;
+
+    width:fit-content;
+
+    gap:.5rem;
+
+    color:var(--accent);
+
+    font-size:.9rem;
+
+    text-decoration:none;
+
+    transition:
+        color .2s ease,
+        transform .2s ease;
+
+}
+
+
+.project-link:hover {
+
+    color:var(--text-primary);
+
+    transform:translateX(3px);
+
+}
+
+
+.project-link.disabled {
+
+    color:var(--text-secondary);
+
+    pointer-events:none;
 
 }

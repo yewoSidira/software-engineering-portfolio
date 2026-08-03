@@ -131,8 +131,17 @@ async function loadProjects() {
                 .join("");
 
             const repositoryButton = project.repository
-                ? `<a href="${project.repository}" target="_blank" class="project-link">View Repository →</a>`
-                : `<span class="project-link disabled">Private Repository</span>`;
+    ? `<a href="${project.repository}" target="_blank" rel="noopener noreferrer" class="project-link">
+        View Repository →
+      </a>`
+    : `<span class="project-link disabled">Private Repository</span>`;
+
+
+const demoButton = project.demo
+    ? `<a href="${project.demo}" target="_blank" rel="noopener noreferrer" class="project-link">
+        View Demo →
+      </a>`
+    : "";
 
             const card = document.createElement("article");
             card.className = "project-card";
