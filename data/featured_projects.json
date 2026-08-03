@@ -57,6 +57,6 @@
         "projectType": "Personal Project",
         "stack": ["HTML", "CSS", "JavaScript"],
         "repository": "https://github.com/yewoSidira/PHOTOGRAPHY-WEBSITE",
-        "demo": null
+        "demo": "https://23photography.netlify.app/"
     }
 ]
