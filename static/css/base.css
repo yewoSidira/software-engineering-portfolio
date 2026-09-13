@@ -157,6 +157,127 @@ body{
 
 }
 
+body > *:not(.code-background){
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+
+/* ==========================================
+   MOVING CODE GRID
+========================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-1;
+
+    pointer-events:none;
+
+    background-image:
+        linear-gradient(
+            rgba(56,189,248,.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(56,189,248,.035) 1px,
+            transparent 1px
+        );
+
+    background-size:48px 48px;
+
+    animation:gridMove 18s linear infinite;
+
+}
+
+
+/* ==========================================
+   GRID ANIMATION
+========================================== */
+
+@keyframes gridMove{
+
+    from{
+
+        background-position:0 0, 0 0;
+
+    }
+
+    to{
+
+        background-position:48px 0, 48px 0;
+
+    }
+
+}
+
+
+/* ==========================================
+   LIGHT THEME GRID
+========================================== */
+
+html[data-theme="light"] body::before{
+
+    background-image:
+        linear-gradient(
+            rgba(37,99,235,.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(37,99,235,.045) 1px,
+            transparent 1px
+        );
+
+}
+
+
+/* ==========================================
+   MOBILE OPTIMISATION
+========================================== */
+
+@media(max-width:768px){
+
+    body::before{
+
+        background-size:36px 36px;
+
+        animation-duration:24s;
+
+    }
+
+}
+
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    html{
+
+        scroll-behavior:auto;
+
+    }
+
+    body::before{
+
+        animation:none;
+
+    }
+
+}
+
 
 /* ==========================================
    DEFAULTS
