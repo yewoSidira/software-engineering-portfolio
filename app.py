@@ -3,7 +3,14 @@ import json
 from flask import Flask, Response, jsonify, render_template
 
 app = Flask(__name__)
-SITE_URL = os.environ.get("SITE_URL", "https://yewosidira.pro").rstrip("/")
+SITE_URL = os.environ.get(
+    "SITE_URL", "https://yewo-portfolio-static.onrender.com"
+).rstrip("/")
+
+
+@app.context_processor
+def inject_site_url():
+    return {"site_url": SITE_URL}
 
 
 @app.route("/")

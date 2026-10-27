@@ -4,7 +4,7 @@ import os
 import shutil
 from pathlib import Path
 
-os.environ.setdefault("SITE_URL", "https://yewosidira.pro")
+os.environ.setdefault("SITE_URL", "https://yewo-portfolio-static.onrender.com")
 
 from app import app  # noqa: E402
 

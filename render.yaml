@@ -15,4 +15,4 @@ services:
     staticPublishPath: dist
     envVars:
       - key: SITE_URL
-        value: https://yewosidira.pro
+        value: https://yewo-portfolio-static.onrender.com

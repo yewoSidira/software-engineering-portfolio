@@ -78,6 +78,6 @@ Edit `data/featured_projects.json` to add or update a project. Use `repository: 
 
 ## Deployment
 
-Run `python build_static.py` to generate the static site in `dist/`. The Render Blueprint in `render.yaml` defines a separate static service so the existing live service can remain online while the static deployment is verified. The intended custom domain is `yewosidira.pro`.
+Run `python build_static.py` to generate the static site in `dist/`. Render's free static site is configured at `yewo-portfolio-static.onrender.com`. Canonical metadata, robots.txt, and sitemap.xml use this URL until a custom domain is configured.
 
 Built by **Yewo Sidira**

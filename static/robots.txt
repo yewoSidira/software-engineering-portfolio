@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yewosidira.pro/sitemap.xml
+Sitemap: https://yewo-portfolio-static.onrender.com/sitemap.xml
