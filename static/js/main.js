@@ -195,7 +195,7 @@ async function loadProjects(){
 
     try{
 
-        const response = await fetch("/projects");
+        const response = await fetch("/projects.json");
 
         const projects = await response.json();
 

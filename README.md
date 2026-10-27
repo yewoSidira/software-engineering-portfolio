@@ -1,6 +1,6 @@
 # Yewo Sidira | Software Engineering Portfolio
 
-A modern software engineering portfolio built with **Flask**, showcasing backend development, software architecture, and engineering projects.
+A modern software engineering portfolio built with **Flask** and deployable as a static site, showcasing backend development, software architecture, and engineering projects.
 
 Rather than functioning as a traditional web portfolio, this project is designed to communicate engineering thinking through project case studies, clean architecture, and maintainable code.
 
@@ -10,6 +10,7 @@ Rather than functioning as a traditional web portfolio, this project is designed
 
 - Responsive design
 - Flask backend
+- Static site build for low-cost, always-on hosting
 - Modular Jinja templates
 - Engineering-focused UI
 - Project case studies
@@ -65,7 +66,8 @@ http://127.0.0.1:5000
 
 ## Project Structure
 
-- `app.py` — Flask application and project-data endpoint
+- `app.py` — Flask application and project-data endpoints
+- `build_static.py` — renders the site into `dist/` for static hosting
 - `templates/` — Jinja page and reusable sections
 - `static/` — stylesheets, JavaScript, and site assets
 - `data/featured_projects.json` — project cards and their links
@@ -76,6 +78,6 @@ Edit `data/featured_projects.json` to add or update a project. Use `repository: 
 
 ## Deployment
 
-The site is deployed at [yewo-sidira.onrender.com](https://yewo-sidira.onrender.com/). Render configuration is in `render.yaml`.
+Run `python build_static.py` to generate the static site in `dist/`. The Render Blueprint in `render.yaml` defines a separate static service so the existing live service can remain online while the static deployment is verified. The intended custom domain is `yewosidira.pro`.
 
 Built by **Yewo Sidira**
