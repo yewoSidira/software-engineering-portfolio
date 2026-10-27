@@ -1,5 +1,17 @@
 [
     {
+        "title": "ServeU",
+        "description": "A service platform designed to connect users with the help they need. Explore the live app to see the experience in action.",
+        "roleTitle": "Repository",
+        "role": "Source code is private; the live application is available to explore.",
+        "status": "Live",
+        "statusClass": "complete",
+        "projectType": "Web Application",
+        "stack": [],
+        "repository": null,
+        "demo": "https://serveu.serveu-app.workers.dev/"
+    },
+    {
         "title": "Software Engineering Portfolio",
         "description": "A Flask-based engineering portfolio built using reusable Jinja components, responsive layouts, and clean architecture principles.",
         "roleTitle": "My Role",

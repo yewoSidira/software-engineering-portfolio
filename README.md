@@ -63,28 +63,19 @@ http://127.0.0.1:5000
 
 ---
 
-## Project Goals
+## Project Structure
 
-This portfolio is being developed incrementally following software engineering best practices, including:
+- `app.py` — Flask application and project-data endpoint
+- `templates/` — Jinja page and reusable sections
+- `static/` — stylesheets, JavaScript, and site assets
+- `data/featured_projects.json` — project cards and their links
 
-- reusable components
-- responsive layouts
-- accessibility
-- maintainable architecture
-- iterative development
-- clean Git history
+## Updating Projects
 
----
+Edit `data/featured_projects.json` to add or update a project. Use `repository: null` for private source code and provide a `demo` URL when a live application is available. Descriptions should distinguish implemented features from planned design.
 
-## Future Improvements
+## Deployment
 
-- GitHub API integration
-- Light/Dark mode
-- Project timeline
-- Architecture visualizations
-- Performance optimization
-- Deployment
-
----
+The site is deployed at [yewo-sidira.onrender.com](https://yewo-sidira.onrender.com/). Render configuration is in `render.yaml`.
 
 Built by **Yewo Sidira**

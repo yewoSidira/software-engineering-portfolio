@@ -157,13 +157,7 @@ body{
 
 }
 
-body > *:not(.code-background){
 
-    position:relative;
-
-    z-index:1;
-
-}
 
 
 /* ==========================================
