@@ -5,7 +5,4 @@ __pycache__/
 .vscode/
 .idea/
 dist/
-<<<<<<< HEAD
 .wrangler/
-=======
->>>>>>> origin/main
