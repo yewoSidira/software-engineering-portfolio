@@ -1,0 +1,105 @@
+/* UX refinements layered on top of premium.css */
+
+/* Content stays visible without JS; reveal only hides when JS is running */
+.reveal { opacity: 1; transform: none; }
+.js .reveal { opacity: 0; transform: translateY(12px); }
+.js .reveal.active { opacity: 1; transform: none; }
+
+/* Theme icons */
+.theme-toggle .icon-sun { display: none; }
+html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
+html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+
+/* Hamburger -> close */
+.menu-bars,
+.menu-bars::before,
+.menu-bars::after {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform .25s ease, background .2s ease;
+}
+.menu-bars { position: relative; }
+.menu-bars::before,
+.menu-bars::after { content: ""; position: absolute; left: 0; }
+.menu-bars::before { top: -6px; }
+.menu-bars::after { top: 6px; }
+.menu-toggle[aria-expanded="true"] .menu-bars { background: transparent; }
+.menu-toggle[aria-expanded="true"] .menu-bars::before { transform: translateY(6px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .menu-bars::after { transform: translateY(-6px) rotate(-45deg); }
+
+/* Active nav link */
+.nav-links a[aria-current="true"] { color: var(--accent); }
+
+/* Scroll progress */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    z-index: 10000;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: linear-gradient(90deg, var(--accent), #818cf8);
+    pointer-events: none;
+}
+
+/* Project cards: equal-height, actions pinned to the bottom */
+.projects-grid .project-card {
+    display: flex;
+    flex-direction: column;
+    transition: transform .25s ease, border-color .25s ease;
+}
+.projects-grid .project-footer { margin-top: auto; }
+.projects-grid .project-card:hover { transform: translateY(-3px); }
+
+/* Contact copy button */
+.copy-btn {
+    min-width: 76px;
+    padding: .4rem .8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-bg-light);
+    color: var(--text-secondary);
+    font-family: var(--font-code);
+    font-size: .72rem;
+    cursor: pointer;
+    transition: border-color .2s ease, color .2s ease;
+}
+.copy-btn:hover { border-color: var(--accent); color: var(--accent); }
+.copy-btn.copied { border-color: var(--availability-border); color: var(--availability-text); }
+
+/* Back to top */
+.to-top {
+    position: fixed;
+    right: 1.2rem;
+    bottom: 1.2rem;
+    z-index: 9000;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--navbar-bg-scrolled);
+    color: var(--text-primary);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+    transition: opacity .25s ease, transform .25s ease, border-color .2s ease;
+}
+.to-top.visible { opacity: 1; transform: none; pointer-events: auto; }
+.to-top:hover { border-color: var(--accent); }
+
+/* Mobile menu: slightly larger tap targets */
+@media (max-width: 768px) {
+    .nav-links a { padding: .65rem 1rem; }
+}
+
+/* Copy button sits next to the label so every link right-aligns */
+.contact-item .copy-btn { order: 1; margin-right: auto; margin-left: -1rem; }
+.contact-item > a { order: 2; }

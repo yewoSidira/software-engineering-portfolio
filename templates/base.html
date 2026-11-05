@@ -25,6 +25,12 @@
     <meta name="author"
           content="Yewo Sidira">
 
+    <meta name="theme-color"
+          content="#080d16">
+
+    <meta name="color-scheme"
+          content="dark light">
+
 
 
     <!-- Open Graph -->
@@ -38,8 +44,10 @@
     <meta property="og:type"
           content="website">
 
+    {% if site_url %}
     <meta property="og:url"
-          content="https://yewo-sidira.onrender.com/">
+          content="{{ site_url }}/">
+    {% endif %}
 
     <!-- Twitter -->
 
@@ -57,8 +65,10 @@
 
     <!-- Canonical -->
 
+    {% if site_url %}
     <link rel="canonical"
-          href="https://yewo-sidira.onrender.com/">
+          href="{{ site_url }}/">
+    {% endif %}
 
 
 
@@ -98,19 +108,17 @@
     <!-- Prevent theme flashing -->
 
     <script>
-
         (function () {
-
-            const savedTheme = localStorage.getItem("theme");
-
-            if (savedTheme) {
-
-                document.documentElement.dataset.theme = savedTheme;
-
+            var root = document.documentElement;
+            root.classList.add("js");
+            var theme = null;
+            try { theme = localStorage.getItem("theme"); } catch (e) {}
+            if (!theme && window.matchMedia &&
+                window.matchMedia("(prefers-color-scheme: light)").matches) {
+                theme = "light";
             }
-
+            if (theme === "light") { root.dataset.theme = "light"; }
         })();
-
     </script>
 
 
@@ -126,7 +134,7 @@
         "name": "Yewo Sidira",
         "jobTitle": "Backend Software Engineer",
         "description": "Backend Software Engineer specializing in Python, Django, Flask, APIs, scalable systems, and clean software architecture.",
-        "url": "https://yewo-sidira.onrender.com/",
+        {% if site_url %}"url": "{{ site_url }}/",{% endif %}
 
         "sameAs": [
             "https://github.com/SIDIRAYEWO",

@@ -1,400 +1,178 @@
-/* ==========================================
-   NAVBAR
-========================================== */
+(() => {
+    "use strict";
 
-const navbar = document.querySelector(".navbar");
+    const root = document.documentElement;
+    const prefersReducedMotion =
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-if(navbar){
+    /* ---------- Navbar, scroll progress, back-to-top ---------- */
 
-    window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
 
-        if(window.scrollY > 30){
+    const progress = document.createElement("div");
+    progress.className = "scroll-progress";
+    progress.setAttribute("aria-hidden", "true");
+    document.body.appendChild(progress);
 
-            navbar.classList.add("scrolled");
+    const toTop = document.createElement("button");
+    toTop.type = "button";
+    toTop.className = "to-top";
+    toTop.setAttribute("aria-label", "Back to top");
+    toTop.innerHTML =
+        '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" ' +
+        'stroke="currentColor" stroke-width="2" stroke-linecap="round" ' +
+        'stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+    toTop.addEventListener("click", () =>
+        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" })
+    );
+    document.body.appendChild(toTop);
 
-        }else{
+    let ticking = false;
+    function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+            const y = window.scrollY;
+            const max = root.scrollHeight - window.innerHeight;
+            navbar?.classList.toggle("scrolled", y > 30);
+            progress.style.transform = `scaleX(${max > 0 ? Math.min(y / max, 1) : 0})`;
+            toTop.classList.toggle("visible", y > 700);
+            ticking = false;
+        });
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
 
-            navbar.classList.remove("scrolled");
+    /* ---------- Mobile menu ---------- */
 
-        }
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
 
-    }, { passive:true });
-
-}
-
-
-/* ==========================================
-   MOBILE MENU
-========================================== */
-
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-
-if(menuToggle && navLinks){
-
-    menuToggle.setAttribute("aria-expanded", "false");
-
-    menuToggle.addEventListener("click", () => {
-
-        const isOpen = navLinks.classList.toggle("active");
-
+    function setMenu(open) {
+        if (!menuToggle || !navLinks) return;
+        navLinks.classList.toggle("active", open);
+        menuToggle.setAttribute("aria-expanded", String(open));
         menuToggle.setAttribute(
-            "aria-expanded",
-            String(isOpen)
+            "aria-label",
+            open ? "Close navigation menu" : "Open navigation menu"
         );
+    }
 
-    });
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", () =>
+            setMenu(!navLinks.classList.contains("active"))
+        );
+        navLinks.addEventListener("click", (e) => {
+            if (e.target.closest("a")) setMenu(false);
+        });
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && navLinks.classList.contains("active")) {
+                setMenu(false);
+                menuToggle.focus();
+            }
+        });
+        document.addEventListener("click", (e) => {
+            if (
+                navLinks.classList.contains("active") &&
+                !e.target.closest(".nav-links, .menu-toggle")
+            ) {
+                setMenu(false);
+            }
+        });
+    }
 
+    /* ---------- Scroll spy ---------- */
 
-    navLinks.querySelectorAll("a").forEach(link => {
+    const navAnchors = [...document.querySelectorAll(".nav-links a[href^='#']")];
+    const spyTargets = navAnchors
+        .map((a) => document.querySelector(a.getAttribute("href")))
+        .filter(Boolean);
 
-        link.addEventListener("click", () => {
+    if (spyTargets.length && "IntersectionObserver" in window) {
+        const visible = new Map();
+        const spy = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((en) => visible.set(en.target.id, en.isIntersecting));
+                const current = spyTargets.find((t) => visible.get(t.id));
+                navAnchors.forEach((a) => {
+                    const on = current && a.getAttribute("href") === "#" + current.id;
+                    if (on) a.setAttribute("aria-current", "true");
+                    else a.removeAttribute("aria-current");
+                });
+            },
+            { rootMargin: "-40% 0px -55% 0px" }
+        );
+        spyTargets.forEach((t) => spy.observe(t));
+    }
 
-            navLinks.classList.remove("active");
+    /* ---------- Reveal on scroll ---------- */
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
+    const revealEls = document.querySelectorAll(".reveal");
+    if (revealEls.length) {
+        if (!("IntersectionObserver" in window) || prefersReducedMotion) {
+            revealEls.forEach((el) => el.classList.add("active"));
+        } else {
+            const io = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((en) => {
+                        if (en.isIntersecting) {
+                            en.target.classList.add("active");
+                            io.unobserve(en.target);
+                        }
+                    });
+                },
+                { threshold: 0.1 }
             );
+            revealEls.forEach((el) => io.observe(el));
+        }
+    }
 
+    /* ---------- Copy email ---------- */
+
+    document.querySelectorAll(".copy-btn").forEach((btn) => {
+        btn.addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(btn.dataset.copy);
+                btn.textContent = "Copied ✓";
+                btn.classList.add("copied");
+            } catch {
+                btn.textContent = "Press Ctrl+C";
+            }
+            setTimeout(() => {
+                btn.textContent = "Copy";
+                btn.classList.remove("copied");
+            }, 1800);
         });
-
     });
 
-}
+    /* ---------- Theme ---------- */
 
+    const themeColor = document.querySelector('meta[name="theme-color"]');
 
-/* ==========================================
-   SCROLL SPY
-========================================== */
+    function currentTheme() {
+        return root.dataset.theme === "light" ? "light" : "dark";
+    }
 
-const sections = document.querySelectorAll("section[id]");
-const links = document.querySelectorAll(".nav-links a");
-
-function updateActiveLink(){
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop - 150;
-        const sectionHeight = section.offsetHeight;
-
-        if(
-            window.scrollY >= sectionTop &&
-            window.scrollY < sectionTop + sectionHeight
-        ){
-
-            current = section.id;
-
-        }
-
-    });
-
-
-    links.forEach(link => {
-
-        link.classList.remove("active");
-
-        if(
-            link.getAttribute("href") === "#" + current
-        ){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-}
-
-window.addEventListener(
-    "scroll",
-    updateActiveLink,
-    { passive:true }
-);
-
-updateActiveLink();
-
-
-/* ==========================================
-   REVEAL ANIMATION
-========================================== */
-
-const revealElements = document.querySelectorAll(".reveal");
-
-if(revealElements.length){
-
-    const revealObserver = new IntersectionObserver(
-        entries => {
-
-            entries.forEach(entry => {
-
-                if(entry.isIntersecting){
-
-                    entry.target.classList.add("active");
-
-                }
-
-            });
-
-        },
-        {
-            threshold:0.15
-        }
-    );
-
-
-    revealElements.forEach(element => {
-
-        revealObserver.observe(element);
-
-    });
-
-}
-
-
-/* ==========================================
-   SMOOTH SCROLL
-========================================== */
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-    anchor.addEventListener("click", function(e){
-
-        const target = document.querySelector(
-            this.getAttribute("href")
+    function syncThemeColor() {
+        themeColor?.setAttribute(
+            "content",
+            currentTheme() === "light" ? "#f4f7f9" : "#080d16"
         );
-
-        if(target){
-
-            e.preventDefault();
-
-            target.scrollIntoView({
-                behavior:"smooth"
-            });
-
-        }
-
-    });
-
-});
-
-
-/* ==========================================
-   PROJECTS
-========================================== */
-
-const projectsContainer =
-    document.querySelector("#github-projects");
-
-
-async function loadProjects(){
-
-    if(!projectsContainer) return;
-
-    try{
-
-        const response = await fetch("/projects");
-
-        const projects = await response.json();
-
-        projectsContainer.innerHTML = "";
-
-
-        projects.forEach(project => {
-
-            const stack = project.stack
-                .map(item => `<span>${item}</span>`)
-                .join("");
-
-
-            const repositoryButton = project.repository
-
-                ? `
-                    <a
-                        href="${project.repository}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-link"
-                    >
-                        View Source on GitHub →
-                    </a>
-                  `
-
-                : `
-                    <span class="project-link disabled">
-                        Source code is private
-                    </span>
-                  `;
-
-
-            const demoButton = project.demo
-
-                ? `
-                    <a
-                        href="${project.demo}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-link"
-                    >
-                        Open Live Demo →
-                    </a>
-                  `
-
-                : "";
-
-
-            const card =
-                document.createElement("article");
-
-            card.className = "project-card";
-
-
-            card.innerHTML = `
-
-                <div class="project-header">
-
-                    <h3>${project.title}</h3>
-
-                    <span
-                        class="status ${project.statusClass}"
-                    >
-                        ● ${project.status}
-                    </span>
-
-                </div>
-
-
-                <p>
-                    ${project.description}
-                </p>
-
-
-                <div class="project-role">
-
-                    <strong>
-                        ${project.roleTitle}
-                    </strong>
-
-                    <span>
-                        ${project.role}
-                    </span>
-
-                </div>
-
-
-                ${stack.length || project.projectType ? `<div class="project-tags">
-
-                    ${stack}
-
-                    ${project.projectType ? `<span>${project.projectType}</span>` : ""}
-
-                </div>` : ""}
-
-
-                <div class="project-footer">
-
-                    ${repositoryButton}
-
-                    ${demoButton || (project.repository ? `<span class="project-link disabled">No live demo</span>` : "")}
-
-                </div>
-
-            `;
-
-
-            projectsContainer.appendChild(card);
-
-        });
-
-    }catch(error){
-
-        console.error(error);
-
-        projectsContainer.innerHTML =
-            "<p>Unable to load projects.</p>";
-
     }
 
-}
-
-loadProjects();
-
-
-/* ==========================================
-   THEME SWITCHER
-========================================== */
-
-const themeToggle =
-    document.getElementById("theme-toggle");
-
-const themeIcon =
-    document.getElementById("theme-icon");
-
-
-const themes = [
-    "dark",
-    "light"
-];
-
-
-let currentTheme =
-    localStorage.getItem("theme") || "dark";
-
-
-function applyTheme(theme){
-
-    if(theme === "dark"){
-
-        document.documentElement
-            .removeAttribute("data-theme");
-
-        if(themeIcon){
-
-            themeIcon.textContent = "🌙";
-
-        }
-
-    }else{
-
-        document.documentElement
-            .setAttribute("data-theme", "light");
-
-        if(themeIcon){
-
-            themeIcon.textContent = "☀️";
-
-        }
-
+    function setTheme(theme) {
+        if (theme === "light") root.dataset.theme = "light";
+        else root.removeAttribute("data-theme");
+        syncThemeColor();
+        try {
+            localStorage.setItem("theme", theme);
+        } catch {}
     }
 
-
-    localStorage.setItem(
-        "theme",
-        theme
-    );
-
-}
-
-
-applyTheme(currentTheme);
-
-
-themeToggle?.addEventListener(
-    "click",
-    () => {
-
-        let index =
-            themes.indexOf(currentTheme);
-
-        index =
-            (index + 1) % themes.length;
-
-        currentTheme =
-            themes[index];
-
-        applyTheme(currentTheme);
-
-    }
-);
+    document
+        .getElementById("theme-toggle")
+        ?.addEventListener("click", () =>
+            setTheme(currentTheme() === "dark" ? "light" : "dark")
+        );
+    syncThemeColor();
+})();

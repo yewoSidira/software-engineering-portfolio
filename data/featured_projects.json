@@ -2,8 +2,8 @@
     {
         "title": "ServeU",
         "description": "A service platform designed to connect users with the help they need. Explore the live app to see the experience in action.",
-        "roleTitle": "Repository",
-        "role": "Source code is private; the live application is available to explore.",
+        "roleTitle": "Availability",
+        "role": "Live application you can explore right now.",
         "status": "Live",
         "statusClass": "complete",
         "projectType": "Web Application",

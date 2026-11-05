@@ -29,22 +29,65 @@
 
 
 
-        <div
-            id="github-projects"
-            class="projects-grid"
-            aria-live="polite"
-            aria-label="GitHub projects">
+        <div id="github-projects"
+             class="projects-grid"
+             aria-label="Selected projects">
 
+            {% for project in projects %}
 
-            <div class="loading-projects">
+            <article class="project-card">
 
-                Loading projects...
+                <div class="project-header">
 
-            </div>
+                    <h3>{{ project.title }}</h3>
 
+                    <span class="status {{ project.statusClass }}">
+                        ● {{ project.status }}
+                    </span>
+
+                </div>
+
+                <p>{{ project.description }}</p>
+
+                <div class="project-role">
+                    <strong>{{ project.roleTitle }}</strong>
+                    <span>{{ project.role }}</span>
+                </div>
+
+                {% if project.stack or project.projectType %}
+                <div class="project-tags">
+                    {% for item in project.stack %}<span>{{ item }}</span>{% endfor %}
+                    {% if project.projectType %}<span>{{ project.projectType }}</span>{% endif %}
+                </div>
+                {% endif %}
+
+                <div class="project-footer">
+
+                    {% if project.repository %}
+                    <a href="{{ project.repository }}" target="_blank"
+                       rel="noopener noreferrer" class="project-link">
+                        View Source on GitHub →
+                    </a>
+                    {% else %}
+                    <span class="project-link disabled">Source code is private</span>
+                    {% endif %}
+
+                    {% if project.demo %}
+                    <a href="{{ project.demo }}" target="_blank"
+                       rel="noopener noreferrer" class="project-link">
+                        Open Live Demo →
+                    </a>
+                    {% elif project.repository %}
+                    <span class="project-link disabled">No live demo</span>
+                    {% endif %}
+
+                </div>
+
+            </article>
+
+            {% endfor %}
 
         </div>
-
 
 
     </div>
