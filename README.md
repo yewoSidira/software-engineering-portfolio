@@ -66,7 +66,11 @@ http://127.0.0.1:5000
 
 ## Project Structure
 
+<<<<<<< HEAD
 - `app.py` — Flask app (templates + robots/sitemap routes)
+=======
+- `app.py` — Flask application and project-data endpoints
+>>>>>>> origin/main
 - `build_static.py` — renders the site into `dist/` for static hosting
 - `templates/` — Jinja page and reusable sections
 - `static/` — stylesheets, JavaScript, and site assets
@@ -78,6 +82,7 @@ Edit `data/featured_projects.json` to add or update a project. Use `repository: 
 
 ## Deployment (static, no cold starts)
 
+<<<<<<< HEAD
 Flask/Jinja only runs at build time. The rendered site in `dist/` is served from Cloudflare's edge as static assets.
 
 Live at https://yewo-sidira.serveu-app.workers.dev
@@ -90,5 +95,8 @@ npx wrangler deploy
 ```
 
 `wrangler.jsonc` points at `dist/`; `_headers` sets security and cache headers. When you buy a domain, add it under the Worker's *Settings → Domains & Routes* and rebuild with the new `SITE_URL`.
+=======
+Run `python build_static.py` to generate the static site in `dist/`. Render's free static site is configured at `yewo-portfolio-static.onrender.com`. Canonical metadata, robots.txt, and sitemap.xml use this URL until a custom domain is configured.
+>>>>>>> origin/main
 
 Built by **Yewo Sidira**
