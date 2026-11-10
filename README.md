@@ -80,14 +80,18 @@ Edit `data/featured_projects.json` to add or update a project. Use `repository: 
 
 Flask/Jinja only runs at build time. The rendered site in `dist/` is served from Cloudflare's edge as static assets.
 
-Live at https://yewo-sidira.serveu-app.workers.dev
+Live at https://yewo-sidira.yewo.workers.dev
 
-To redeploy after changes:
+The site runs on its own Cloudflare account, separate from any other project.
+Pushing to `main` triggers a Cloudflare build. To deploy manually instead:
 
 ```bash
-SITE_URL=https://yewo-sidira.serveu-app.workers.dev python build_static.py
+SITE_URL=https://yewo-sidira.yewo.workers.dev python build_static.py
 npx wrangler deploy
 ```
+
+Optional build variable: `GOOGLE_SITE_VERIFICATION` (the code from Google
+Search Console's HTML-tag verification method).
 
 `wrangler.jsonc` points at `dist/`; `_headers` sets security and cache headers. When you buy a domain, add it under the Worker's *Settings → Domains & Routes* and rebuild with the new `SITE_URL`.
 
